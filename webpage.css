@@ -1,13 +1,55 @@
-/* CSS Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/McDonald%27s_square_2020.svg/800px-McDonald%27s_square_2020.svg.png'); /* Replace with your image URL */
-    background-size: cover;    /* Ensures the image covers the entire page */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+/* Background */
+.background-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255, 0, 0, 0.8) 100%);
+    animation: pulse 10s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Styles for the McDonald's logo image */
+.m-logo-image {
+    width: 1000px; /* Adjust size as needed */
+    height: auto;
+    filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8)); /* Enhanced glowing effect */
+    animation: bounce 2s infinite, glow 1.5s infinite alternate;
+}
+
+/* Keyframe animations */
+@keyframes pulse {
+    0% {
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
+    }
+    50% {
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
+    }
+    100% {
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
+    }
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8));
+    }
+    to {
+        filter: drop-shadow(0 0 100px rgba(255, 215, 0, 1));
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+/*background*/
 
 /*nav {
     text-align: center;
@@ -42,7 +84,9 @@ body {
     width: 400px;
     height: 300px;
     max-width: 700px;
-    position: relative; /* Ensures the image container is positioned relative to this section */
+    position: absolute; /* Remove from normal document flow */
+    top: 100px; /* Distance from the top of the containing element */
+    left: 50px; /* Distance from the left of the containing element */
     text-align: center;
 }
 
@@ -73,7 +117,7 @@ body {
 
 img {
     display: block;
-    margin: 5   px auto;
+    margin: 5px auto;
     border-radius: 8px;
 }
 
@@ -94,11 +138,4 @@ footer {
 
 .gallery img:hover {
     transform: scale(1.1);
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0; /* Default background color */
 }
