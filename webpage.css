@@ -3,46 +3,77 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/McDonald%27s_square_2020.svg/800px-McDonald%27s_square_2020.svg.png'); /* Replace with your image URL */
+    background-size: cover;    /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
-
-nav {
+/*nav {
     text-align: center;
     margin: 20px 0;
-}
+}*/
 
-nav a {
+/*nav a {
     margin: 0 15px;
     text-decoration: none;
     color: #4CAF50;
-}
+}*/
 
-nav a:hover {
+/*nav a:hover {
     text-decoration: underline;
-}
+}*/
 
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
+/*section {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(214, 107, 107);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}*/
+
+/*2ndsection*/
+#about {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(238, 39, 39);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 300px;
+    max-width: 700px;
+    position: relative; /* Ensures the image container is positioned relative to this section */
+    text-align: center;
 }
 
-h1, h2 {
-    color: #333;
+.image-container {
+    position: relative; /* Position container relative to the #about section */
+    display: inline-block; /* Keep the container size to the images */
 }
+
+.default-image {
+    width: 300px; /* Adjust size as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.first-image {
+    position: absolute; /* Overlay the first image on top of the second image */
+    top: 0;
+    left: 0;
+    width: 300px; /* Adjust size as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+    opacity: 0; /* Hide the first image by default */
+    transition: opacity 0.5s ease; /* Smooth transition effect */
+}
+
+.image-container:hover .first-image {
+    opacity: 1; /* Show the first image on hover */
+}
+/*2ndsection*/
 
 img {
     display: block;
-    margin: 10px auto;
+    margin: 5   px auto;
     border-radius: 8px;
 }
 
