@@ -51,6 +51,8 @@
 }
 /*background*/
 
+
+
 /*nav {
     text-align: center;
     margin: 20px 0;
@@ -86,7 +88,7 @@
     max-width: 700px;
     position: absolute; /* Remove from normal document flow */
     top: 100px; /* Distance from the top of the containing element */
-    left: 50px; /* Distance from the left of the containing element */
+    left: 100px; /* Distance from the left of the containing element */
     text-align: center;
 }
 
@@ -115,27 +117,67 @@
 }
 /*2ndsection*/
 
-img {
-    display: block;
-    margin: 5px auto;
-    border-radius: 8px;
+/*3rdsection*/
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #4CAF50;
-    color: white;
+.hobby {
     position: relative;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hobby:hover .details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.summary {
+    padding: 20px;
+    background: #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.details {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    bottom: 0;
+    height: 100%;
+    padding: 20px;
+    background: #eee;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+/*3rdsection*/
+
+
+/*4th section*/
+.tilt-gallery {
+    display: flex;
+    justify-content: space-around;
 }
 
-.gallery img {
-    margin: 10px;
+.tilt-gallery img {
+    width: 200px;
+    border-radius: 10px;
     transition: transform 0.2s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
+.tilt-gallery img:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+/*4thsection*/
