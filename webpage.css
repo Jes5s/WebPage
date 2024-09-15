@@ -1,13 +1,11 @@
-/* Global Styles */
 body {
     margin: 0;
     padding: 0;
-    background-color: #FF0000; /* McDonald's red */
+    background-color: #FF0000;
     font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
-/* Background Image */
 .background-container {
     position: relative;
     width: 100vw;
@@ -15,108 +13,100 @@ body {
     overflow: hidden;
     background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
     animation: pulse 10s infinite;
-    z-index: 1; /* Ensure it stays behind other content */
+    z-index: 1;
 }
 
-/* McDonald's logo adjustments */
 .m-logo-image {
-    position: absolute; /* Ensure it's positioned correctly */
-    top: 20%; /* Center vertically */
-    left: 40%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the logo */
+    position: absolute; 
+    top: 20%; 
+    left: 40%; 
+    transform: translate(-50%, -50%);
     width: 1000px;
     height: auto;
     filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8));
     animation: bounce 2s infinite, glow 1.5s infinite alternate;
-    z-index: 2; /* Ensure it's above the background */
+    z-index: 2; 
 }
 
-/* About Me Section */
 #about {
     padding: 20px;
     background-color: rgba(247, 68, 68, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 42%; /* Fixed width */
+    width: 42%; 
     height: 370px;
     margin: 20px 0;
     position: relative;
-    left: 50px; /* Align to the left */
+    left: 50px;
     z-index: 2;
 }
 
-/* Container for the images */
+
 .image-container {
     position: relative;
-    width: 300px; /* Adjust based on your preferred size */
-    height: 300px; /* Ensure container height matches or is larger than images */
+    width: 300px; 
+    height: 300px;
 }
 
-/* Default image style */
 .default-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure image covers container without distortion */
+    object-fit: cover; 
     border-radius: 10px;
-    transition: opacity 0.5s ease; /* Smooth transition effect */
+    transition: opacity 0.5s ease; 
 }
 
-/* Hover image style */
 .first-image {
-    position: absolute; /* Overlay the hover image on top of the default image */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure image covers container without distortion */
+    object-fit: cover; 
     border-radius: 10px;
-    opacity: 0; /* Hide by default */
-    transition: opacity 0.5s ease; /* Smooth transition effect */
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-/* Show hover image on hover */
 .image-container:hover .first-image {
-    opacity: 1; /* Show the hover image */
+    opacity: 1; 
 }
 
-/* Optional: Reduce the scale of the hover effect */
 .image-container:hover .first-image {
-    transform: scale(1.1); /* Slightly zoom in the image on hover */
+    transform: scale(1.1); 
 }
 
 
-/* Hobbies Section */
+
 #hobbies {
     padding: 20px;
     background-color: rgba(236, 78, 78, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 42%; /* Full width */
-    overflow-x: auto; /* Allow horizontal scroll if needed */
-    margin: 50px 0; /* Margin to push it down */
-    position: relative; /* Keep it in normal document flow */
-    left: 50px; /* Align to the left */
+    width: 42%;
+    overflow-x: auto;
+    margin: 50px 0; 
+    position: relative; 
+    left: 50px; 
     z-index: 2;
 }
 
-/* Container for all hobbies */
 .hobbies-container {
     display: flex;
-    flex-direction: row; /* Arrange the hobby cards horizontally */
-    gap: 20px; /* Space between each hobby card */
-    overflow-x: auto; /* Allow horizontal scrolling */
-    padding-bottom: 10px; /* Space for horizontal scroll */
+    flex-direction: row; 
+    gap: 20px; 
+    overflow-x: auto; 
+    padding-bottom: 10px; 
 }
 
-/* Flip effect container */
 .hobby-card {
-    perspective: 1000px; /* Add perspective for 3D effect */
+    perspective: 1000px; 
 }
 
 .hobby-card-inner {
     position: relative;
-    width: 200px; /* Adjust width */
-    height: 300px; /* Adjust height */
+    width: 200px; 
+    height: 300px; 
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
@@ -151,25 +141,23 @@ body {
     transform: rotateY(180deg);
 }
 
-/* Image Styling */
 .hobby-card-front img {
-    width: 80px; /* Adjust this value */
-    height: 80px; /* Adjust this value */
-    object-fit: cover; /* Adjust to fit the container */
-    margin-bottom: 10px; /* Space between image and text */
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    margin-bottom: 10px; 
 }
 
 .hobby-card-front h3 {
     margin: 0;
-    font-size: 1.2em; /* Adjust text size */
+    font-size: 1.2em; 
 }
 
 .hobby-card-back p {
     text-align: center;
-    font-size: 0.9em; /* Adjust text size */
+    font-size: 0.9em; 
 }
 
-/* Keyframe Animations */
 @keyframes pulse {
     0% {
         background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
@@ -200,7 +188,6 @@ body {
     }
 }
 
-/* Gallery Section */
 .scroll-to-gallery {
     position: fixed;
     bottom: 20px;
@@ -211,10 +198,9 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 1000; /* Ensure button is above other content */
+    z-index: 1000; 
 }
 
-/* Optional styling for the gallery container and grid */
 .gallery-container {
     padding: 20px;
     background-color: #f9f9f9;
@@ -244,7 +230,7 @@ body {
     color: white;
     text-align: center;
     padding: 10px;
-    display: none; /* Hidden by default */
+    display: none; 
 }
 
 .gallery-item:hover .overlay {
@@ -262,7 +248,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: none; /* Hidden by default */
+    display: none; 
 }
 
 #goTopButton:hover {

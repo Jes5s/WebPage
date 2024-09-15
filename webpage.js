@@ -58,7 +58,6 @@ window.onscroll = function() {
     }
 };
 
-// Scroll to top when button is clicked
 document.getElementById('goTopButton').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
