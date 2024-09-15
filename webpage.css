@@ -1,34 +1,184 @@
-/* Background */
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FF0000; /* McDonald's red */
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Background Image */
 .background-container {
     position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255, 0, 0, 0.8) 100%);
+    background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
     animation: pulse 10s infinite;
+    z-index: 1; /* Ensure it stays behind other content */
+}
+
+/* McDonald's logo adjustments */
+.m-logo-image {
+    position: absolute; /* Ensure it's positioned correctly */
+    top: 20%; /* Center vertically */
+    left: 40%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the logo */
+    width: 1000px;
+    height: auto;
+    filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8));
+    animation: bounce 2s infinite, glow 1.5s infinite alternate;
+    z-index: 2; /* Ensure it's above the background */
+}
+
+/* About Me Section */
+#about {
+    padding: 20px;
+    background-color: rgba(247, 68, 68, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 42%; /* Fixed width */
+    height: 370px;
+    margin: 20px 0;
+    position: relative;
+    left: 50px; /* Align to the left */
+    z-index: 2;
+}
+
+/* Container for the images */
+.image-container {
+    position: relative;
+    width: 300px; /* Adjust based on your preferred size */
+    height: 300px; /* Ensure container height matches or is larger than images */
+}
+
+/* Default image style */
+.default-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers container without distortion */
+    border-radius: 10px;
+    transition: opacity 0.5s ease; /* Smooth transition effect */
+}
+
+/* Hover image style */
+.first-image {
+    position: absolute; /* Overlay the hover image on top of the default image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers container without distortion */
+    border-radius: 10px;
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.5s ease; /* Smooth transition effect */
+}
+
+/* Show hover image on hover */
+.image-container:hover .first-image {
+    opacity: 1; /* Show the hover image */
+}
+
+/* Optional: Reduce the scale of the hover effect */
+.image-container:hover .first-image {
+    transform: scale(1.1); /* Slightly zoom in the image on hover */
+}
+
+
+/* Hobbies Section */
+#hobbies {
+    padding: 20px;
+    background-color: rgba(236, 78, 78, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 42%; /* Full width */
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    margin: 50px 0; /* Margin to push it down */
+    position: relative; /* Keep it in normal document flow */
+    left: 50px; /* Align to the left */
+    z-index: 2;
+}
+
+/* Container for all hobbies */
+.hobbies-container {
+    display: flex;
+    flex-direction: row; /* Arrange the hobby cards horizontally */
+    gap: 20px; /* Space between each hobby card */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding-bottom: 10px; /* Space for horizontal scroll */
+}
+
+/* Flip effect container */
+.hobby-card {
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.hobby-card-inner {
+    position: relative;
+    width: 200px; /* Adjust width */
+    height: 300px; /* Adjust height */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.hobby-card:hover .hobby-card-inner {
+    transform: rotateY(180deg);
+}
+
+.hobby-card-front, .hobby-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.hobby-card-front {
+    background: #c1cc2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(245, 26, 26, 0.1);
+}
+
+.hobby-card-back {
+    background: #ec3939;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    transform: rotateY(180deg);
 }
 
-/* Styles for the McDonald's logo image */
-.m-logo-image {
-    width: 1000px; /* Adjust size as needed */
-    height: auto;
-    filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8)); /* Enhanced glowing effect */
-    animation: bounce 2s infinite, glow 1.5s infinite alternate;
+/* Image Styling */
+.hobby-card-front img {
+    width: 80px; /* Adjust this value */
+    height: 80px; /* Adjust this value */
+    object-fit: cover; /* Adjust to fit the container */
+    margin-bottom: 10px; /* Space between image and text */
 }
 
-/* Keyframe animations */
+.hobby-card-front h3 {
+    margin: 0;
+    font-size: 1.2em; /* Adjust text size */
+}
+
+.hobby-card-back p {
+    text-align: center;
+    font-size: 0.9em; /* Adjust text size */
+}
+
+/* Keyframe Animations */
 @keyframes pulse {
     0% {
-        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
     }
     50% {
-        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
+        background: radial-gradient(circle, rgba(255,0,0,0.6) 0%, rgba(255,0,0,0.4) 100%);
     }
     100% {
-        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
     }
 }
 
@@ -49,135 +199,72 @@
         transform: translateY(-30px);
     }
 }
-/*background*/
 
-
-
-/*nav {
-    text-align: center;
-    margin: 20px 0;
-}*/
-
-/*nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #4CAF50;
-}*/
-
-/*nav a:hover {
-    text-decoration: underline;
-}*/
-
-/*section {
-    margin: 5px;
-    padding: 5px;
-    background-color: rgb(214, 107, 107);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}*/
-
-/*2ndsection*/
-#about {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgb(238, 39, 39);
+/* Gallery Section */
+.scroll-to-gallery {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    height: 300px;
-    max-width: 700px;
-    position: absolute; /* Remove from normal document flow */
-    top: 100px; /* Distance from the top of the containing element */
-    left: 100px; /* Distance from the left of the containing element */
-    text-align: center;
-}
-
-.image-container {
-    position: relative; /* Position container relative to the #about section */
-    display: inline-block; /* Keep the container size to the images */
-}
-
-.default-image {
-    width: 300px; /* Adjust size as needed */
-    border-radius: 10px; /* Optional: add rounded corners */
-}
-
-.first-image {
-    position: absolute; /* Overlay the first image on top of the second image */
-    top: 0;
-    left: 0;
-    width: 300px; /* Adjust size as needed */
-    border-radius: 10px; /* Optional: add rounded corners */
-    opacity: 0; /* Hide the first image by default */
-    transition: opacity 0.5s ease; /* Smooth transition effect */
-}
-
-.image-container:hover .first-image {
-    opacity: 1; /* Show the first image on hover */
-}
-/*2ndsection*/
-
-/*3rdsection*/
-.hobbies-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.hobby {
-    position: relative;
-    width: 200px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #f9f9f9;
     cursor: pointer;
-    transition: all 0.3s ease;
+    z-index: 1000; /* Ensure button is above other content */
 }
 
-.hobby:hover .details {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.summary {
+/* Optional styling for the gallery container and grid */
+.gallery-container {
     padding: 20px;
-    background: #ddd;
-    border-radius: 8px;
-    text-align: center;
+    background-color: #f9f9f9;
 }
 
-.details {
-    position: absolute;
-    top: 0;
-    left: 0;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
     width: 100%;
-    height: 100%;
-    padding: 20px;
-    background: #eee;
-    border-radius: 8px;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.3s ease;
-}
-/*3rdsection*/
-
-
-/*4th section*/
-.tilt-gallery {
-    display: flex;
-    justify-content: space-around;
+    height: auto;
 }
 
-.tilt-gallery img {
-    width: 200px;
-    border-radius: 10px;
-    transition: transform 0.2s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    display: none; /* Hidden by default */
 }
 
-.tilt-gallery img:hover {
-    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.gallery-item:hover .overlay {
+    display: block;
 }
-/*4thsection*/
+
+#goTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+#goTopButton:hover {
+    background-color: #0056b3;
+}

@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('McDonald\'s themed background loaded!');
-});
-
 /*3rdsectopm*/
 const items = document.querySelectorAll('.item');
 const tooltip = document.querySelector('.tooltip');
@@ -24,23 +20,46 @@ items.forEach(item => {
 /*3rdsection*/
 
 /*4thsection*/
-const lightbox = document.querySelectorAll('.lightbox');
-const overlay = document.createElement('div');
-overlay.className = 'lightbox-overlay';
-document.body.appendChild(overlay);
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('caption');
+    const close = document.querySelector('.close');
 
-lightbox.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const img = document.createElement('img');
-        img.src = link.href;
-        overlay.innerHTML = '';
-        overlay.appendChild(img);
-        overlay.style.display = 'flex';
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.getAttribute('data-image');
+            lightboxImg.src = imgSrc;
+            lightbox.style.display = 'block';
+        });
+    });
+
+    close.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
     });
 });
 
-overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
+function scrollToGallery() {
+    document.getElementById('gallery-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+window.onscroll = function() {
+    let button = document.getElementById('goTopButton');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+};
+
+// Scroll to top when button is clicked
+document.getElementById('goTopButton').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 /*4thsection*/
