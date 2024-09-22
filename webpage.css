@@ -1,9 +1,26 @@
-body {
+/*header*/
+header {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(255, 215, 0, 0.8));
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3em;
+    color: rgb(255, 238, 0);
     margin: 0;
-    padding: 0;
-    background-color: #FF0000;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glow 1.5s infinite alternate;
+}
+/*header*/
+
+/* Background */
+body {
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
 }
 
 .background-container {
@@ -11,162 +28,29 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
+    background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255, 0, 0, 0.8) 100%);
     animation: pulse 10s infinite;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .m-logo-image {
-    position: absolute; 
-    top: 20%; 
-    left: 40%; 
-    transform: translate(-50%, -50%);
-    width: 1000px;
+    width: 900px;
     height: auto;
     filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8));
     animation: bounce 2s infinite, glow 1.5s infinite alternate;
-    z-index: 2; 
-}
-
-#about {
-    padding: 20px;
-    background-color: rgba(247, 68, 68, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 42%; 
-    height: 370px;
-    margin: 20px 0;
-    position: relative;
-    left: 50px;
-    z-index: 2;
-}
-
-
-.image-container {
-    position: relative;
-    width: 300px; 
-    height: 300px;
-}
-
-.default-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 10px;
-    transition: opacity 0.5s ease; 
-}
-
-.first-image {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.image-container:hover .first-image {
-    opacity: 1; 
-}
-
-.image-container:hover .first-image {
-    transform: scale(1.1); 
-}
-
-
-
-#hobbies {
-    padding: 20px;
-    background-color: rgba(236, 78, 78, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 42%;
-    overflow-x: auto;
-    margin: 50px 0; 
-    position: relative; 
-    left: 50px; 
-    z-index: 2;
-}
-
-.hobbies-container {
-    display: flex;
-    flex-direction: row; 
-    gap: 20px; 
-    overflow-x: auto; 
-    padding-bottom: 10px; 
-}
-
-.hobby-card {
-    perspective: 1000px; 
-}
-
-.hobby-card-inner {
-    position: relative;
-    width: 200px; 
-    height: 300px; 
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.hobby-card:hover .hobby-card-inner {
-    transform: rotateY(180deg);
-}
-
-.hobby-card-front, .hobby-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-.hobby-card-front {
-    background: #c1cc2e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(245, 26, 26, 0.1);
-}
-
-.hobby-card-back {
-    background: #ec3939;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    transform: rotateY(180deg);
-}
-
-.hobby-card-front img {
-    width: 80px; 
-    height: 80px; 
-    object-fit: cover; 
-    margin-bottom: 10px; 
-}
-
-.hobby-card-front h3 {
-    margin: 0;
-    font-size: 1.2em; 
-}
-
-.hobby-card-back p {
-    text-align: center;
-    font-size: 0.9em; 
 }
 
 @keyframes pulse {
     0% {
-        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
     }
     50% {
-        background: radial-gradient(circle, rgba(255,0,0,0.6) 0%, rgba(255,0,0,0.4) 100%);
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
     }
     100% {
-        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.6) 100%);
+        background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0.8) 100%);
     }
 }
 
@@ -187,70 +71,233 @@ body {
         transform: translateY(-30px);
     }
 }
+/*background*/
 
-.scroll-to-gallery {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000; 
-}
-
-.gallery-container {
+/*aboutme*/
+#about {
+    margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: rgb(238, 39, 39);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 650px;
+    max-width: 700px;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    text-align: center;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
 }
 
-.gallery-item {
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.info-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.info-text {
+    font-size: 1.2em;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.default-image {
+    width: 400px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.default-image:hover {
+    transform: scale(1.1);
+}
+
+.first-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-container:hover .first-image {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.default-image {
+    width: 330px;
+    border-radius: 10px;
+}
+
+.first-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-container:hover .first-image {
+    opacity: 1;
+}
+/*aboutme*/
+
+/*hobbies*/
+#hobbies {
+    padding: 20px;
+    background-color: rgba(238, 39, 39);
+    border-radius: 10px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.hobby-card {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
     position: relative;
 }
 
-.gallery-item img {
+.hobby-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.hobby-card:hover .hobby-card-inner {
+    transform: rotateY(180deg);
+}
+
+.hobby-card-front, .hobby-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.hobby-card-front {
+    background-color: #d1d409;
+}
+
+.hobby-card-back {
+    background-color: #ff9999;
+    transform: rotateY(180deg);
+}
+
+.hobby-card-front img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.hobby-card-front h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.hobby-card-back p {
+    text-align: center;
+    font-size: 0.9em;
+    color: #fff;
+}
+/*hobbies*/
+
+/*gallery*/
+#gallery {
+    margin: 0;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.gallerygallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 0;
+}
+
+.gallery-title {
+    background-color: rgba(238, 39, 39, 0.8);
+    color: rgb(255, 215, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.grid-item img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    display: none; 
+.grid-item img:hover {
+    transform: scale(1.05);
 }
 
-.gallery-item:hover .overlay {
-    display: block;
+.fam {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
 }
-
-#goTopButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; 
-}
-
-#goTopButton:hover {
-    background-color: #0056b3;
-}
+/*gallery*/
