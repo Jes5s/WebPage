@@ -62,3 +62,7 @@ document.getElementById('goTopButton').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 /*4thsection*/
+
+document.getElementById("darkToggle").addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+});

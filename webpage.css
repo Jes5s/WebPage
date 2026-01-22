@@ -301,3 +301,70 @@ body {
     border: 2px solid #000;
 }
 /*gallery*/
+
+/*dark more*/
+body.dark {
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+/* Header */
+body.dark header {
+    background: linear-gradient(135deg, #111827, #1f2933);
+}
+
+body.dark header h1 {
+    color: #facc15;
+}
+
+/* Background section */
+body.dark .background-container {
+    background: radial-gradient(circle, #020617 0%, #020617 100%);
+}
+
+body.dark .m-logo-image {
+    filter: drop-shadow(0 0 40px rgba(250, 204, 21, 0.6));
+}
+
+/* About section */
+body.dark #about {
+    background-color: #1e293b;
+}
+
+/* Hobbies section */
+body.dark #hobbies {
+    background-color: #1e293b;
+}
+
+body.dark .hobby-card-front {
+    background-color: #374151;
+    color: #ffffff;
+}
+
+body.dark .hobby-card-back {
+    background-color: #4b5563;
+}
+
+/* Gallery */
+body.dark .gallery-title {
+    background-color: #1e293b;
+    color: #facc15;
+}
+
+/* Images slightly dimmed */
+body.dark img {
+    filter: brightness(0.95);
+}
+
+
+body.dark {
+    background-color: #111;
+    color: #fff;
+}
+
+body.dark header,
+body.dark #about,
+body.dark #hobbies {
+    background-color: #222;
+    color: #fff;
+}
